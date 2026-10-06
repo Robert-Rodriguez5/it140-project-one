@@ -7,25 +7,23 @@
 
 **Theme:**
 
-TODO: Name and briefly describe your game's theme.
+Haunted Mansion
 
 **Storyline:**
 
-TODO: In one short paragraph, explain the setting, the player's goal, the items
-the player must gather, and the threat created by the villain.
-
+The player must find their way out of the abandon mansion at night. The player will have to search through the mansion and find six items to get out. There is a ghost that will roam around the mansion from room to room as the player tries to find the six items. The player will need to sneak around the mansion find all six items and escape the mansion without being caught by the ghost.
 ## Rooms
 
 Project One requires a minimum of eight rooms.
 
-1. TODO: Start room
-2. TODO: Room
-3. TODO: Room
-4. TODO: Room
-5. TODO: Room
-6. TODO: Room
-7. TODO: Room
-8. TODO: Villain room
+1. Foyer: Start room - 
+2. Bedroom: 
+3. Attic:
+4. Library:
+5. Study:
+6. Kitchen: 
+7. Garage: 
+8. Basement: Villian 
 
 Add more rooms if your design needs them.
 
@@ -34,20 +32,19 @@ Add more rooms if your design needs them.
 With the minimum eight-room design, Project One requires at least six items.
 Every room except the start room and villain room must contain one item.
 
-1. TODO: Item
-2. TODO: Item
-3. TODO: Item
-4. TODO: Item
-5. TODO: Item
-6. TODO: Item
+1. Silver Amulet
+2. Battery
+3. Old Map
+4. Mansion Key
+5. Flashlight
+6. Crowbar
 
 If you add rooms beyond the minimum, add an item for every additional room
 except the start room and villain room.
 
 ## Villain
 
-TODO: Identify and briefly describe the villain.
-
+The Ghost of the Mansion: The ghost will start in the basement and progress to the next room in a fixed sequence every time the player moves. Once you know how it moves make sure not to go in the room the ghost is in. If the ghost gets to you before you find all 6 items the game is over
 ## Storyboard and Map Check
 
 Before submitting, compare this storyboard with `game_map.drawio`.

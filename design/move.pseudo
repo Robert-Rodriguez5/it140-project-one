@@ -7,19 +7,96 @@
 # Write pseudocode, not Python code. Use clear indentation and course-appropriate
 # keywords such as INPUT, OUTPUT, IF, ELSE, WHILE, SET, or similar terms.
 
-# TODO 1: Identify the information the movement process needs.
-# Consider the player's current room and movement command.
+SET game_not_over = TRUE
+WHILE game_not_over = TRUE
+    SET current_room = player's current room
+    SET movement_command = direction the player wants to move
 
-# TODO 2: Prompt for and receive the player's movement command.
+    PUT "Enter a direction (north, south, east, or west):"
+    GET movement_command
 
-# TODO 3: Validate whether the requested movement is possible from the
-# current room. Show the decision clearly.
+    SET valid_move = FALSE
 
-# TODO 4: Describe what happens when the movement command is valid.
-# Include the room update and player output.
+    IF current_room = "Foyer" AND movement_command = "west"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Foyer" AND movement_command = "north"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Bedroom" AND movement_command = "east"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Bedroom" AND movement_command = "north"
+     SET valid_move = TRUE
+    ELSE IF current_room = "Attic" AND movement_command = "south"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Attic" AND movement_command = "north"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Library" AND movement_command = "south"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Library" AND movement_command = "east"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Study" AND movement_command = "west"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Study" AND movement_command = "east"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Kitchen" AND movement_command = "west"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Kitchen" AND movement_command = "south"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Garage" AND movement_command = "north"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Garage" AND movement_command = "west"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Basement" AND movement_command = "east"
+        SET valid_move = TRUE
+    ELSE IF current_room = "Basement" AND movement_command = "south"
+        SET valid_move = TRUE
+    ENDIF
 
-# TODO 5: Describe what happens when the movement command is invalid.
-# Include the output the player should receive.
+    IF valid_move = TRUE
+    IF current_room = "Foyer" AND movement_command = "west"
+        SET current_room = "Bedroom"
+    ELSE IF current_room = "Foyer" AND movement_command = "north"
+        SET current_room = " Basement"
+    ELSE IF current_room = "Bedroom" AND movement_command = "east"
+        SET current_room = "Foyer"
+    ELSE IF current_room = "Bedroom" AND movement_command = "north"
+        SET current_room = "Attic"
+    ELSE IF current_room = "Attic" AND movement_command = "south"
+        SET current_room = "Bedroom"
+    ELSE IF current_room = "Attic" AND movement_command = "north"
+        SET current_room = "Library"
+    ELSE IF current_room = "Library" AND movement_command = "south"
+        SET current_room = "Attic"
+    ELSE IF current_room = "Library" AND movement_command = "east"
+        SET current_room = "Study"
+    ELSE IF current_room = "Study" AND movement_command = "west"
+        SET current_room = "Library"
+    ELSE IF current_room = "Study" AND movement_command = "east"
+        SET current_room = "Kitchen"
+    ELSE IF current_room = "Kitchen" AND movement_command = "west"
+        SET current_room = "Study"
+    ELSE IF current_room = "Kitchen" AND movement_command = "south"
+        SET current_room = "Garage"
+    ELSE IF current_room = "Garage" AND movement_command = "north"
+        SET current_room = "Kitchen"
+    ELSE IF current_room = "Garage" AND movement_command = "west"
+        SET current_room = "Basement" 
+    ELSE IF current_room = "Basement" AND movement_command = "east"
+        SET current_room = "Garage"
+    ELSE IF current_room = "Basement" AND movement_command = "south"
+        Set current_room = "Foyer"
+        ENDIF
+        PUT "You moved to " + current_room + "."
+    ENDIF
 
-# TODO 6: Show how movement fits into repeated gameplay.
-# The final game continues accepting commands until a required ending occurs.
+    IF valid_move = FALSE
+        PUT "You cannot move in that direction."
+    ENDIF
+
+    IF current_room = "Foyer" AND inventory contains all six items
+        PUT "You escaped the mansion!"
+        SET game_not_over = FALSE
+    ELS IF player is in the same room as ghost
+        Put "The ghost caught you!"
+        SET game_not_over = FALSE
+    ENDIF
+ENDWHILE

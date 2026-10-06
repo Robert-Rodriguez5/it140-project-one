@@ -9,25 +9,24 @@
 
 START get_item
 
-    # TODO 1: Identify the information the get-item process needs.
-    # Consider the current room, item in that room, and player's inventory.
+   SET current_room as room the player is currently in
+   SET room_item as the item that is in the current_room
+   SET inventory as the items the player currently has
+   PRINT "Type the item you wish to obtain:"
+   GET item_command
+   SET valid_item to FALSE
+   IF item_command matches room_item
+   Set valid item to TRUE
+   ENDIF
+   IF valid_item = TRUE
+   ADD item_command to your inventory
+   PUT "You picked up" + item_command + "."
+   SET room_item = NONE
+   ELSE
+   PUT "There is no item by that name."
+   ENDIF
+   PUT "Here is your inventory" + inventory
 
-    # TODO 2: Prompt for and receive the player's get-item command.
-
-    # TODO 3: Validate whether the requested item is available in the current
-    # room. Show the decision clearly.
-
-    # TODO 4: Describe what happens when the item request is valid.
-    # Include the inventory update and player output.
-
-    # TODO 5: Describe what happens when the item request is invalid.
-    # Include the output the player should receive.
-
-    # TODO 6: Show how the process returns to or continues the larger gameplay
-    # loop after the command is handled.
+    RETURN TO MAIN GAME LOOP.
 
 END get_item
-
-
-# References
-
